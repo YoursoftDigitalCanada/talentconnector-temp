@@ -25,7 +25,7 @@ import {
   WifiOff,
 } from 'lucide-react';
 import { useJob } from '../hooks/useJob';
-import { submitApplication } from '../api/applications.api';
+import { submitJobApplication } from '../api/applications.api';
 
 interface FormData {
   firstName: string;
@@ -225,7 +225,7 @@ const ApplyJobPage = () => {
         source: formData.heardAboutUs || 'website',
       };
 
-      await submitApplication(applicationData, uploadedFile);
+      await submitJobApplication(applicationData, uploadedFile);
 
       setIsSubmitted(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
